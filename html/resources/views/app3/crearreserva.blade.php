@@ -1,5 +1,7 @@
 @extends('app3')
-
+<?php
+$capacidad = session('capacidad');
+?>
 @section('content')
           <!--//   'turno','fecha','telefono','nombre','personas','idmesa'-->
 <div class="container w-25 border p-4 mt-5">
@@ -21,14 +23,21 @@
               <input type="date" name="fecha"class="form-control" placeholder="Fecha">
             </div>
             <div class="mb-3">
-              <input type="text" name="personas"class="form-control" placeholder="Numero de personas">
+                <select class="form-select" aria-label="Default select example" name="personas">
+                <option value='1'>Numero de personas</option>
+                  <?php
+                  for ($i=1; $i <= $capacidad; $i++) { 
+                    echo "<option value='$i'>$i</option>";
+                  }
+                  ?>
+                </select>
             </div>
             <div class="mb-3">
               <input type="text" name="descripcion"class="form-control" placeholder="Descripcion">
             </div>
             <div class="mb-3">
                 <select class="form-select" aria-label="Default select example" name="turno">
-                    <option >Turno</option>
+                    <option value="13:00-14:00">Turno</option>
                     <option value="13:00-14:00">13:00-14:00</option>
                     <option value="15:00-16:00">15:00-16:00</option>
                     <option value="21:00-22:00">21:00-22:00</option>

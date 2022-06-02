@@ -26,13 +26,13 @@ $tickets =Tickets::where('id',$id)->first()
             <h6 class="alert alert-danger">{{$message}}</h6>
           @enderror
             <div class="mb-3">
-              <input type="text" name="cantidad"class="form-control" placeholder="<?php echo $tickets['numero'];?>">
+              <input type="text" name="cantidad"class="form-control" value="{{$tickets->numero}}">
             </div>
             <div class="mb-3">
-              <input type="text" name="precio"class="form-control" placeholder="<?php echo $tickets['precio'];?>">
+              <input type="text" name="precio"class="form-control" value="{{$tickets->precio}}">
             </div>
             <div class="mb-3">
-              <input type="text" name="descripcion"class="form-control" placeholder="<?php echo $tickets['descripcion'];?>">
+              <input type="text" name="descripcion"class="form-control" value="{{$tickets->descripcion}}">
             </div>
             <button type="submit" class="btn btn-primary">Editar</button>
             <a href="{{ route('comandas') }}" class="btn btn-primary">Volver</a>

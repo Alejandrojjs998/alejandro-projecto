@@ -59,30 +59,27 @@ class TicketsController extends Controller
                 return redirect()->route('comandas')->with(['message'=> 'Successfully deleted!!']);
             }
           
-            return redirect()->route('comandas')->with(['message'=> 'Wrong ID!!']);irect()->route('menu3');
+            return redirect()->route('comandas')->with(['message'=> 'Wrong ID!!']);
             
            }
-
-
-
-           public function editarticket(Request $request,$id)
+/*
+           public function edit($id){
+            $ticket=Tickets::findOrFail($id);
+            return view('editarticket',compact('tickets'));
+        }
+*/
+           public function updateticket(Request $request,$id)
            {
 
-            $request->validate([
-                'numpro' => 'required|min:1',
-                'precio' => 'required|min:1',
-                'descripcion' => 'required|min:1'
-            ]);
+            $tickets =Tickets::where('id',$id)->first();
 
-              $tickets = Tickets::find($id);
               $ticket->numpro = $request->numero;
               $ticket->precio = $request->precio;
               $ticket->descripcion = $request->descripcion;
-               
-               
-               $tickets->update();
+             $tickets->update();
                return redirect()->route('comandas')->with(['message'=> 'Successfully deleted!!']);
            }
+
 
 
 }

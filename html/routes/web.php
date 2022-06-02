@@ -211,4 +211,4 @@ Route::post('update-mesa/{numero}', [MesasController::class, 'update']);
 Route::post('anadir-producto/{id}', [TicketsController::class, 'añadorticket'])->name('añadorticket');
 Route::post('vaciar/{id}', [TicketsController::class, 'vaciar'])->name('vaciar');
 Route::post('borrar-ticket/{id}', [TicketsController::class, 'destroyticket'])->name('destroyticket');
-Route::post('updateticket/{id}', [TicketsController::class, 'editarticket'])->name('editarticket');
+Route::post('editarticket/{id}', [TicketsController::class, 'updateticket'])->name('updateticket');

@@ -37,10 +37,10 @@ if ($tables==null) {
             <tr>
 
             <td> <a href='#' class='btn btn-dark'>{{ $table->producto }}</a></td>
-            <td> <a href='#' class='btn btn-dark'>{{ $table->numero }}</a></td>
+            <td> <a href='#' class='btn btn-dark'>{{ $table->numpro }}</a></td>
             <td> <a href='#' class='btn btn-dark'>{{ $table->precio }}€</a></td>
             <td> <a href='#' class='btn btn-dark'>{{ $table->descripcion }}</a></td>
-            <td> <a href="editarticket?id={{ $table->id }}" class="btn btn-primary">Editar</a></td>
+            <td> <a href="editarticket?id={{ $table->id }}" class="btn btn-warning">Editar</a></td>
             <form action="{{ url('borrar-ticket/'.$table->id) }}" method="post">
             @csrf
         <td> <button class="btn btn-danger btn-sm">Eliminar</button></td>

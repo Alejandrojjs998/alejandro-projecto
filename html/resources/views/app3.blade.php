@@ -35,7 +35,7 @@
           <a class="nav-link active" aria-current="page" href="{{ route('reservasactuales') }}">Reservas para hoy</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{ route('comandas') }}">comandas</a>
+          <a class="nav-link active" aria-current="page" href="{{ route('comandas') }}">Comandas</a>
         </li>
 	<li class="float-right">
          <a class="nav-link active btn btn-danger float-right" aria-current="page" href="{{ route('menu') }}">exit</a>
